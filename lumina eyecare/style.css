@@ -1,0 +1,480 @@
+:root {
+  --primary-color: #117dd4;
+  --secondary-color: #0a4a7d;
+  --background-color: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --dark-gray: #333333;
+  --light-gray: #cccccc;
+}
+
+body {
+  font-family: 'Nyala', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== Animations ========== */
+
+/* Reusable Slide From Top Animation */
+.slide-from-top {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.8s ease-in-out;
+}
+
+.slide-from-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sidebar default hidden on mobile */
+.sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* When sidebar is open (mobile) */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Mobile Sidebar Adjustments */
+@media (max-width: 767px) {
+  .sidebar.open {
+    width: 5rem; /* 80px, icon-only width */
+  }
+}
+/* Glassmorphism Hero Card */
+.hero-card {
+  background: rgba(255, 255, 255, 0.1); /* translucent white */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card:hover {
+  border-color: rgba(17, 125, 212, 0.6); /* matches your primary color */
+  box-shadow: 0 12px 40px rgba(17, 125, 212, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+header img {
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(17, 125, 212, 0.5);
+}
+
+/* Floating animation for Hero Card */
+@keyframes floatAround {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(10px, -10px); }
+  50%  { transform: translate(0, -20px); }
+  75%  { transform: translate(-10px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+.hero-card {
+  animation: floatAround 10s ease-in-out infinite;
+  animation-play-state: running;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Stop animation on hover */
+.hero-card:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+/* Stop animation on click */
+.hero-card:active {
+  animation-play-state: paused;
+}
+
+/* Highlight the word "Eye Care" */
+.highlight-text {
+  color: #1da1f2; /* brighter blue */
+  font-weight: 800; /* extra bold for emphasis */
+}
+
+/* Make hero headline bolder and clearer */
+h1 {
+  letter-spacing: 0.5px; /* small spacing for readability */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* subtle depth shadow */
+}
+
+/* Reusable fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================= */
+/* Fix Hero Card Responsiveness */
+/* ========================= */
+
+/* Mobile (stack hero card under text, full width) */
+@media (max-width: 640px) {
+  #hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-card {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: none; /* let it expand */
+  }
+}
+
+/* Tablet (allow side-by-side but give breathing space) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  #hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .hero-card {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Desktop (keep side-by-side) */
+@media (min-width: 1025px) {
+  #hero {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5rem 3rem;
+  }
+
+  .hero-card {
+    max-width: 450px;
+    margin-left: 2rem;
+  }
+}
+
+/* ========================= */
+/* About Section Typography */
+/* ========================= */
+#about p {
+  font-size: 0.95rem;   /* ~15px */
+  line-height: 1.6;     /* improve readability */
+}
+
+/* ========================= */
+/* Mobile fix for Hero & About */
+/* ========================= */
+@media (max-width: 640px) {
+  #hero,
+  #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    text-align: center;
+    padding: 4rem 1.5rem;    /* spacing away from top */
+    min-height: 100vh;       /* force full screen height */
+  }
+
+  #hero .max-w-lg,
+  #about .grid {
+    margin-top: 1rem; /* prevents hugging header */
+  }
+
+  #hero .hero-card {
+    margin-top: 2rem;
+    width: 90%;       /* prevents squeeze */
+    max-width: 400px;
+  }
+}
+
+/* Service cards hover effect */
+#services .p-6 {
+  transition: all 0.3s ease-in-out;
+}
+
+#services .p-6:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 40px rgba(17, 125, 212, 0.4);
+}
+
+/* Doctor Card Subtle Glow */
+#doctors .p-6 {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+#doctors .p-6:hover {
+  border-color: rgba(17, 125, 212, 0.6); /* matches About section hover */
+  box-shadow: 0 6px 18px rgba(17, 125, 212, 0.35);
+  transform: translateY(-5px);
+}
+
+/* Apply slide-from-top animation directly to section content */
+#services h2,
+#services .grid > div,
+#doctors h2,
+#doctors .grid > div {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.8s ease-in-out;
+}
+
+#services h2.visible,
+#services .grid > div.visible,
+#doctors h2.visible,
+#doctors .grid > div.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for cards in Services and Doctors sections */
+#services .grid > div:nth-child(2),
+#doctors .grid > div:nth-child(2) { transition-delay: 0.2s; }
+
+#services .grid > div:nth-child(3),
+#doctors .grid > div:nth-child(3) { transition-delay: 0.4s; }
+
+/* Testimonials glowing border */
+.testimonial-card {
+  box-shadow: 0 6px 20px rgba(17, 125, 212, 0.25);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(17, 125, 212, 0.7);
+  box-shadow: 0 10px 30px rgba(17, 125, 212, 0.4); /* match glow like other sections */
+  transform: scale(1.05); /* add zoom effect */
+}
+
+/* Staggered animation delays */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+/* Booking Section Background */
+#booking {
+  background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)),
+    url("https://images.unsplash.com/photo-1551192015-e0c921a050b9?auto=format&fit=crop&w=2070&q=80")
+      center/cover no-repeat;
+}
+
+/* Booking Card Glow + Hover */
+.booking-card {
+  position: relative; /* Needed for the animated border */
+  overflow: hidden; /* Hide overflowing pseudo-element */
+  border: 2px solid transparent; /* Base border */
+}
+
+/* Animated Gradient Border */
+@keyframes rotate-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.booking-card::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(
+    transparent,
+    var(--primary-color),
+    transparent 30%
+  );
+  animation: rotate-gradient 6s linear infinite;
+  z-index: -1;
+}
+
+/* Enhanced form input focus */
+.booking-card input:focus,
+.booking-card select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(17, 125, 212, 0.5);
+}
+
+/* Testimonials Section Background */
+#testimonials {
+  background-image: linear-gradient(
+      rgba(26, 26, 26, 0.85), 
+      rgba(26, 26, 26, 0.85)
+    ),
+    url('https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=2070&q=80');
+}
+
+
+/* Center the About section content */
+#about {  
+  background-image: url('images/hosp-1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 1.5rem; /* Keep padding for content spacing */
+}
+
+/* Glassmorphism Sidebar */
+#sidebar {
+  background: rgba(255, 255, 255, 0.08); /* translucent white */
+  border-right: 0.5px solid rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(12px);            /* glass blur */
+  -webkit-backdrop-filter: blur(12px);    /* Safari fix */
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Overlay for when the mobile menu is open */
+.sidebar.open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1; /* Position it behind the sidebar but over the main content */
+}
+
+/* On medium screens and up, the overlay is not needed */
+@media (min-width: 768px) {
+  .sidebar.open::before {
+    display: none;
+  }
+}
+
+/* ========================= */
+/* Testimonials Carousel (Mobile) */
+/* ========================= */
+
+/* Keyframes for the infinite scroll animation */
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* Move by half the total width (the original set of cards) */
+}
+
+@media (max-width: 767px) {
+  /* Make the parent section a mask to hide the overflow */
+  #testimonials {
+    /* Revert previous change */
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #testimonials .grid {
+    display: flex; /* Change from grid to flex */
+    /* Double the width to hold original + duplicated cards */
+    width: 200%; 
+    animation: infinite-scroll 30s linear infinite; /* Apply the animation */
+    padding: 0 1rem; /* Add some padding to the start and end of the track */
+  }
+
+  #testimonials .testimonial-card {
+    /* Give cards a fixed width to prevent stretching */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 80vw; /* Each card takes up 80% of the viewport width */
+    max-width: 320px; /* Set a max-width for consistency */
+    box-sizing: border-box;
+    /* Add margin for spacing between cards */
+    margin: 0 0.75rem; /* 12px margin */
+  }
+}
+
+/* Hide duplicated testimonials on desktop */
+@media (min-width: 768px) {
+  .testimonial-duplicate {
+    display: none;
+  }
+}
+ 
+/* ========================= */
+/* Sidebar Links (Mobile First) */
+/* ========================= */
+
+/* Base styles for links, applying to both mobile and desktop */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  overflow: hidden;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(17, 125, 212, 0.2);
+}
+
+.sidebar-icon {
+  font-size: 1.25rem; /* Reduced from 1.5rem */
+  min-width: 1.75rem; /* Adjusted for new size */
+}
+
+.sidebar-text {
+  white-space: nowrap;
+  opacity: 0; /* Hide text by default on all screen sizes */
+  /* Position for animation */
+  margin-left: 1rem;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+ /* ========================= */
+ /* Expanding Sidebar (Desktop) */
+ /* ========================= */
+ @media (min-width: 768px) {
+   /* Transition the sidebar width */
+   #sidebar {
+     transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+ 
+   /* Expand sidebar on hover */
+   #sidebar:hover {
+     width: 12rem; /* 192px */
+   }
+ 
+   /* Desktop-specific link styles */
+   .sidebar-link {
+     height: 56px; /* Fixed height for vertical alignment */
+     padding: 0 1.5rem; /* 24px horizontal padding */
+   }
+ 
+   .sidebar-icon {
+     /* Size is now inherited from the base .sidebar-icon rule */
+     text-align: center;
+   }
+ 
+   /* Desktop-specific text label styles for animation */
+   .sidebar-text {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+     font-weight: 500;
+     letter-spacing: 0.5px;
+   }
+ 
+   /* Show and animate text when sidebar is hovered */
+   #sidebar:hover .sidebar-text {
+     opacity: 1;
+     transform: translateX(0);
+     transition-delay: 0.1s; /* Slight delay for a smoother effect */
+   }
+ }
