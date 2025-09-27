@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina Eye Institute - Hero Section</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]">
+  <div class="relative min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 z-50 w-full bg-[var(--dark-gray)]/70 flex items-center justify-between px-6 py-4">
+
+  <!-- Logo + Hospital Name -->
+  <div class="flex items-center space-x-3">
+    <!-- Logo Image -->
+    <img src="images/keratos.jpg" alt="Lumina Eye Institute Logo" class="h-10 w-10 object-contain">
+    <!-- Hospital Name -->
+    <a class="text-xl font-bold text-white" href="#">Lumina Eye Institute</a>
+  </div>
+
+  <!-- Hamburger Button (mobile only) -->
+  <button id="hamburger" class="text-white md:hidden focus:outline-none">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</header>
+
+
+<!-- Sidebar Navigation -->
+<nav id="sidebar"
+  class="sidebar w-20 bg-[var(--dark-gray)]/30 backdrop-blur-lg 
+         md:flex md:w-20
+         fixed h-full left-0 top-0 z-40 pt-24
+         transition-transform transform -translate-x-full md:translate-x-0
+         flex flex-col items-center justify-center py-6 space-y-8">
+
+
+
+
+  <a href="#hero" title="Home" class="sidebar-link">
+    <span class="sidebar-icon">🏠</span>
+    <span class="sidebar-text">Home</span>
+  </a>
+  <a href="#about" title="About Us" class="sidebar-link">
+    <span class="sidebar-icon">ℹ️</span>
+    <span class="sidebar-text">About</span>
+  </a>
+  <a href="#services" title="Services" class="sidebar-link">
+    <span class="sidebar-icon">💉</span>
+    <span class="sidebar-text">Services</span>
+  </a>
+  <a href="#doctors" title="Doctors" class="sidebar-link">
+    <span class="sidebar-icon">👨‍⚕️</span>
+    <span class="sidebar-text">Doctors</span>
+  </a>
+  <a href="#testimonials" title="Testimonials" class="sidebar-link">
+    <span class="sidebar-icon">💬</span>
+    <span class="sidebar-text">Reviews</span>
+  </a>
+  <a href="#booking" title="Book Appointment" class="sidebar-link">
+    <span class="sidebar-icon">📅</span>
+    <span class="sidebar-text">Booking</span>
+  </a>
+</nav>
+
+
+
+    <!-- Hero Section -->
+    <main class="flex-grow md:pl-20 h-screen overflow-y-scroll md:snap-y md:snap-mandatory">
+
+      <!-- Hero Section -->
+<section 
+  id="hero" 
+  class="relative min-h-screen snap-start flex items-center justify-center bg-cover bg-center"
+  style="background-image: url('images/hosp.jpg');">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Left Content -->
+  <div class="relative z-10 max-w-lg text-center md:text-left">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight slide-from-top">
+      Advanced <span class="highlight-text">Eye Care</span> &amp; Surgery
+    </h1>
+
+    <p class="text-base text-[var(--text-secondary)] leading-relaxed my-6 slide-from-top delay-1">
+      Providing exceptional eye care with cutting-edge technology and a compassionate approach.
+    </p>
+
+    <a href="#booking" 
+      class="bg-[var(--primary-color)] text-white font-medium py-2 px-5 rounded-lg hover:bg-[var(--secondary-color)] transition-colors duration-300 ease-in-out shadow-md slide-from-top delay-2">
+      Book an Appointment
+    </a>
+  </div>
+
+  <!-- Right Glass Card -->
+  <div class="relative z-10 hero-card p-8 rounded-2xl shadow-lg w-full max-w-md mt-6 md:mt-0 slide-from-top delay-3">
+    <h2 class="text-xl font-semibold text-white mb-4">Our Specialties</h2>
+    <ul class="space-y-3 text-[var(--text-secondary)]">
+      <li>✔ Cataract Surgery</li>
+      <li>✔ LASIK & Refractive Surgery</li>
+      <li>✔ Corneal Transplants</li>
+      <li>✔ Glaucoma Treatment</li>
+      <li>✔ Pediatric Eye Care</li>
+    </ul>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section id="about" class="relative min-h-screen snap-start text-[var(--text-primary)]">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/70 z-0"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full">
+    
+    <!-- Left Column: Text -->
+    <div class="space-y-6 slide-from-top">
+      <h2 class="text-3xl md:text-4xl font-extrabold">About Us</h2>
+      <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+        At Lumina Eye Institute, we specialize in advanced eye care and surgery. 
+        Our team of skilled doctors uses cutting-edge technology to provide 
+        precise diagnoses, effective treatments, and compassionate care for 
+        patients of all ages.
+      </p>
+      <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+        With years of expertise and a patient-first approach, we are dedicated 
+        to restoring and protecting your vision while ensuring a comfortable 
+        and supportive experience.
+      </p>
+      <a href="#services" class="inline-block bg-[var(--primary-color)] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[var(--secondary-color)] transition-colors duration-300 ease-in-out shadow-lg">
+        Learn More
+      </a>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="flex justify-center md:justify-end slide-from-top delay-1">
+      <img src="images/doc&nurse.png" 
+           alt="Eye Care at Hospital"
+           class="rounded-2xl shadow-2xl w-full max-w-md object-cover">
+    </div>
+
+  </div>
+</section>
+<!-- ================= Services Section ================= -->
+<section 
+  id="services" 
+  class="min-h-screen snap-start flex items-center justify-center bg-cover bg-center px-6 py-16"
+  style="background-image: linear-gradient(
+      rgba(26, 26, 26, 0.9), 
+      rgba(26, 26, 26, 0.9)
+    ), url('images/hosp-1.jpg');"
+>
+  <div class="max-w-6xl w-full text-center text-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 slide-from-top">
+      Our <span class="highlight-text">Services</span>
+    </h2>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-3 gap-10">
+      
+      <!-- Service Card -->
+      <div class="p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 slide-from-top">
+        <h3 class="text-xl font-semibold mb-3">Cataract Surgery</h3>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          Restoring clarity and vision with advanced minimally invasive procedures.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 slide-from-top delay-1">
+        <h3 class="text-xl font-semibold mb-3">LASIK & Refractive Surgery</h3>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          State-of-the-art laser treatment for clear, spectacle-free vision.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 slide-from-top delay-2">
+        <h3 class="text-xl font-semibold mb-3">Pediatric Eye Care</h3>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          Gentle and effective care for children’s vision and eye health.
+        </p>
+      </div>
+    </div>
+</section>
+    
+    <!-- ================= Doctors Section ================= -->
+<section 
+  id="doctors" 
+  class="min-h-screen snap-start flex items-center justify-center bg-cover bg-center px-6 py-16"
+  style="background-image: linear-gradient(
+      rgba(26, 26, 26, 0.9), 
+      rgba(26, 26, 26, 0.9)
+    ), url('https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"
+>
+  <div class="max-w-6xl w-full text-center text-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 slide-from-top">
+      Meet Our <span class="highlight-text">Doctors</span>
+    </h2>
+
+    <!-- Doctors Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+      
+      <!-- Doctor Card -->
+      <div class="p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 slide-from-top">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doctor John" class="w-28 h-28 mx-auto rounded-full border-4 border-[var(--primary-color)] mb-4">
+        <h3 class="text-xl font-semibold">Dr. John Smith</h3>
+        <p class="text-[var(--text-secondary)] text-sm mb-3">Ophthalmic Surgeon</p>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          Specializes in cataract and refractive surgeries with 15+ years of experience.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 slide-from-top delay-1">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Doctor Sarah" class="w-28 h-28 mx-auto rounded-full border-4 border-[var(--primary-color)] mb-4">
+        <h3 class="text-xl font-semibold">Dr. Sarah Johnson</h3>
+        <p class="text-[var(--text-secondary)] text-sm mb-3">Pediatric Ophthalmologist</p>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          Expert in children’s eye care, early detection, and treatment of eye conditions.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 slide-from-top delay-2">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Doctor Alex" class="w-28 h-28 mx-auto rounded-full border-4 border-[var(--primary-color)] mb-4">
+        <h3 class="text-xl font-semibold">Dr. Alex Brown</h3>
+        <p class="text-[var(--text-secondary)] text-sm mb-3">Glaucoma Specialist</p>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          Focused on glaucoma management and innovative treatment solutions.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS SECTION ================= -->
+<section 
+  id="testimonials" 
+  class="min-h-screen snap-start flex flex-col items-center justify-center text-center px-6 py-16 bg-cover bg-center"
+>
+  <h2 class="text-4xl md:text-5xl font-extrabold mb-10 text-white slide-from-top">
+    What Our <span class="highlight-text">Patients</span> Say
+  </h2>
+
+  <div class="max-w-4xl w-full">
+    <!-- Testimonials Grid -->
+    <div class="grid gap-8 md:grid-cols-3" aria-hidden="true">
+      
+      <!-- Card 1 -->
+      <div class="testimonial-card p-6 rounded-2xl shadow-lg bg-[rgba(0,0,0,0.6)] border border-[rgba(17,125,212,0.4)] slide-from-top">
+        <p class="text-[var(--text-secondary)] italic mb-4">
+          “The team at Lumina Eye Institute transformed my vision. I feel like I have a new life.”
+        </p>
+        <h4 class="text-white font-semibold">– Sarah M.</h4>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card p-6 rounded-2xl shadow-lg bg-[rgba(0,0,0,0.6)] border border-[rgba(17,125,212,0.4)] slide-from-top delay-1">
+        <p class="text-[var(--text-secondary)] italic mb-4">
+          “Professional, caring, and truly experts in their field. Highly recommend.”
+        </p>
+        <h4 class="text-white font-semibold">– David K.</h4>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="testimonial-card p-6 rounded-2xl shadow-lg bg-[rgba(0,0,0,0.6)] border border-[rgba(17,125,212,0.4)] slide-from-top delay-2">
+        <p class="text-[var(--text-secondary)] italic mb-4">
+          “From consultation to surgery, the experience was seamless and reassuring.”
+        </p>
+        <h4 class="text-white font-semibold">– Anita R.</h4>
+      </div>
+
+      <!-- [DUPLICATED] Card 1 -->
+      <div class="testimonial-card testimonial-duplicate p-6 rounded-2xl shadow-lg bg-[rgba(0,0,0,0.6)] border border-[rgba(17,125,212,0.4)] slide-from-top">
+        <p class="text-[var(--text-secondary)] italic mb-4">
+          “The team at Lumina Eye Institute transformed my vision. I feel like I have a new life.”
+        </p>
+        <h4 class="text-white font-semibold">– Sarah M.</h4>
+      </div>
+
+      <!-- [DUPLICATED] Card 2 -->
+      <div class="testimonial-card testimonial-duplicate p-6 rounded-2xl shadow-lg bg-[rgba(0,0,0,0.6)] border border-[rgba(17,125,212,0.4)] slide-from-top delay-1">
+        <p class="text-[var(--text-secondary)] italic mb-4">
+          “Professional, caring, and truly experts in their field. Highly recommend.”
+        </p>
+        <h4 class="text-white font-semibold">– David K.</h4>
+      </div>
+
+      <!-- [DUPLICATED] Card 3 -->
+      <div class="testimonial-card testimonial-duplicate p-6 rounded-2xl shadow-lg bg-[rgba(0,0,0,0.6)] border border-[rgba(17,125,212,0.4)] slide-from-top delay-2">
+        <p class="text-[var(--text-secondary)] italic mb-4">
+          “From consultation to surgery, the experience was seamless and reassuring.”
+        </p>
+        <h4 class="text-white font-semibold">– Anita R.</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Booking Section -->
+<section id="booking" class="min-h-screen snap-start flex items-center justify-center bg-cover bg-center relative">
+  <div class="absolute inset-0 bg-black/60"></div> <!-- dark overlay -->
+
+  <div class="relative z-10 max-w-3xl w-full bg-[var(--dark-gray)]/40 backdrop-blur-lg rounded-2xl shadow-lg p-8 border border-[var(--primary-color)]/40 booking-card slide-from-top">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 text-center">
+      Book an Appointment
+    </h2>
+    <form class="space-y-5">
+      <div>
+        <label for="name" class="block text-[var(--text-secondary)] mb-1">Full Name</label>
+        <input type="text" id="name" name="name" 
+          class="w-full p-3 rounded-lg bg-[var(--background-color)] border border-[var(--light-gray)] focus:border-[var(--primary-color)] focus:outline-none">
+      </div>
+      <div>
+        <label for="email" class="block text-[var(--text-secondary)] mb-1">Email</label>
+        <input type="email" id="email" name="email" 
+          class="w-full p-3 rounded-lg bg-[var(--background-color)] border border-[var(--light-gray)] focus:border-[var(--primary-color)] focus:outline-none">
+      </div>
+      <div>
+        <label for="date" class="block text-[var(--text-secondary)] mb-1">Preferred Date</label>
+        <input type="date" id="date" name="date" 
+          class="w-full p-3 rounded-lg bg-[var(--background-color)] border border-[var(--light-gray)] focus:border-[var(--primary-color)] focus:outline-none">
+      </div>
+      <div>
+        <label for="service" class="block text-[var(--text-secondary)] mb-1">Service</label>
+        <select id="service" name="service" 
+          class="w-full p-3 rounded-lg bg-[var(--background-color)] border border-[var(--light-gray)] focus:border-[var(--primary-color)] focus:outline-none">
+          <option value="">Select a service</option>
+          <option>Cataract Surgery</option>
+          <option>LASIK & Refractive Surgery</option>
+          <option>Glaucoma Treatment</option>
+          <option>Pediatric Eye Care</option>
+        </select>
+      </div>
+      <button type="submit" 
+        class="w-full bg-[var(--primary-color)] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[var(--secondary-color)] transition duration-300 ease-in-out shadow-md">
+        Confirm Booking
+      </button>
+    </form>
+  </div>
+</section>
+
+  <!-- ================= Footer Section ================= -->
+<footer id="footer" class="snap-start bg-[var(--dark-gray)] text-[var(--text-secondary)] py-8 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
+    
+    <!-- Copyright -->
+    <p class="text-sm">&copy; 2024 Lumina Eye Institute. All Rights Reserved.</p>
+
+    <!-- Social Media Icons -->
+    <div class="flex space-x-5">
+      <a href="#" title="Facebook" class="hover:text-[var(--primary-color)] transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+        </svg>
+      </a>
+      <a href="#" title="Twitter" class="hover:text-[var(--primary-color)] transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+        </svg>
+      </a>
+      <a href="#" title="Instagram" class="hover:text-[var(--primary-color)] transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0-2a7 7 0 110 14 7 7 0 010-14zm6.406-1.11a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+
+  <!-- JS File -->
+  <script src="script.js"></script>
+</body>
+</html>
